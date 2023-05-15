@@ -1,0 +1,17 @@
+{
+    "packageDirectories": [
+        {
+            "path": "sfdx-source/apex-stopwatch",
+            "default": true,
+            "package": "apex-stopwatch",
+            "versionName": "ver 1.0",
+            "versionNumber": "1.0.0.NEXT",
+            "versionDescription": "Apex Stopwatch is a lightweight library to accurately measure elapsed time."
+        }
+    ],
+    "name": "apex-stopwatch",
+    "namespace": "",
+    "packageAliases": {
+        "apex-stopwatch": "0Ho1t00000000HbCAI"
+    }
+}
