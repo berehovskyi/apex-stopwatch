@@ -30,11 +30,11 @@ private class CurrentTimeStopwatchTest {
         Long elapsedTime3 = Stopwatch.getElapsedTime(ts1, ts);
         sleep(delayMs);
         sw.stop();
-        
+
         sw1.start();
         sleep(delayMs * 2);
         sw1.stop();
-        
+
         sw2.start();
         sleep(delayMs);
         sw2.stop();
@@ -73,7 +73,7 @@ private class CurrentTimeStopwatchTest {
         sw.stop();
         Assert.isTrue(!sw.isRunning);
         Assert.isTrue(sw.elapsed >= delayMs * 2);
-        
+
         Assert.isTrue(!sw1.isRunning);
         Assert.isTrue(sw1.elapsed == 0);
         sw1.start();
@@ -113,5 +113,5 @@ private class CurrentTimeStopwatchTest {
         final Long startTimestamp = currentTimestamp();
         while (currentTimestamp() - startTimestamp <= millis);
     }
-    
+
 }

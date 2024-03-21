@@ -5,7 +5,7 @@
  * @see Limits.getCpuTime
  *
  * @author Oleh Berehovskyi
- * 
+ *
  * @group Utils
  */
 public inherited sharing class CpuTimeStopwatch extends Stopwatch {
@@ -39,5 +39,5 @@ public inherited sharing class CpuTimeStopwatch extends Stopwatch {
     }
     // @end-group
     // </editor-fold>
-    
+
 }

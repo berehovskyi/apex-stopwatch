@@ -10,6 +10,7 @@ Can be used for benchmarks in code optimization.
 Inspired by [C# Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch).
 
 ## Table of Contents
+
 - [Apex Stopwatch](#apex-stopwatch)
     * [Installation](#installation)
     * [Key Features](#key-features)
@@ -26,7 +27,6 @@ Inspired by [C# Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.d
     * [Disclaimer](#disclaimer)
     * [Documentation](#documentation)
 
-
 ## Installation
 
 <a href="https://githubsfdeploy.herokuapp.com?owner=berehovskyi&repo=apex-stopwatch&ref=main">
@@ -36,7 +36,7 @@ Inspired by [C# Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.d
 or install as an Unlocked Package using the CLI:
 
 ```sh
-sf package install -p 04t1t000003HVXnAAO -o me@example.com -r -w 3
+sf package install -p 04t1t000003f3ViAAI -o me@example.com -r -w 3
 ```
 
 ## Key Features
@@ -56,7 +56,7 @@ sf package install -p 04t1t000003HVXnAAO -o me@example.com -r -w 3
   the `System.currentTimeMillis` timestamps. Database operations, e.g. the portion of execution time spent
   in the database for DML, SOQL, and SOSL isn’t counted, nor is waiting time for Apex callouts.
 
-Although Salesforce has a timeout limit for transactions based on CPU usage, sometimes it is useful to analyze 
+Although Salesforce has a timeout limit for transactions based on CPU usage, sometimes it is useful to analyze
 the overall performance of Apex code finding the performance issues to optimize the user experience.
 
 In Apex there are other methods such as `System.now`, `Datetime.now` that can return current timestamps, but
@@ -92,7 +92,7 @@ final Long elapsedMillis = sw.elapsed;
 displayMode: compact
 ---
 gantt
-    dateFormat  x
+    dateFormat x
     axisFormat %L
 
     section Stopwatch
@@ -145,7 +145,7 @@ final Long elapsedMillis = sw.elapsed;
 displayMode: compact
 ---
 gantt
-    dateFormat  x
+    dateFormat x
     axisFormat %L
 
     section Stopwatch
@@ -260,9 +260,9 @@ final Long elapsedMillis = sw.elapsed;
 
 ### Resolution
 
-The resolution of the Stopwatch is `1 ms`. 
+The resolution of the Stopwatch is `1 ms`.
 
-Getting a measurement result of `0 ms` or `1 ms`, which is close to the timer's resolution, 
+Getting a measurement result of `0 ms` or `1 ms`, which is close to the timer's resolution,
 does not necessarily mean that the real value of the measurement is correct.
 
 ```apex
@@ -427,10 +427,10 @@ and it should not be used without necessity.
 Also using the `SOQL` approach not only does not give the performance advantage
 but also consumes the SOQL queries governor limits.
 
-But obtaining the `0 ms` result might not mean that `0`. 
-It can also mean that the result is **below** the timer resolution (`1 ms`). 
+But obtaining the `0 ms` result might not mean that `0`.
+It can also mean that the result is **below** the timer resolution (`1 ms`).
 
-To increase the timer resolution it is possible to measure the `N` numbers of iterations and divide the result by `N` 
+To increase the timer resolution it is possible to measure the `N` numbers of iterations and divide the result by `N`
 to obtain the arithmetic mean:
 
 ```apex
@@ -479,8 +479,8 @@ System.debug(LoggingLevel.ERROR, Integer.valueOf((Double) sw1.elapsed / n * 1000
 System.debug(LoggingLevel.ERROR, Integer.valueOf((Double) sw2.elapsed / n * 1000) + ' ns'); // 57 ns
 ```
 
-So the cheapest way to get the `RecordTypeId` by the `DeveloperName` is by using the 
-`Account.SObjectType.getDescribe` approach, but the performance of the `Schema.SObjectType.Account` approach 
+So the cheapest way to get the `RecordTypeId` by the `DeveloperName` is by using the
+`Account.SObjectType.getDescribe` approach, but the performance of the `Schema.SObjectType.Account` approach
 is similar. The `Schema.describeSObjects` approach is 2-3 times slower but is **dynamic**.
 
 | Approach                        | Mode   | Count | Score | Units |
@@ -491,15 +491,13 @@ is similar. The `Schema.describeSObjects` approach is 2-3 times slower but is **
 | Account.SObjectType.getDescribe | avg    | 10000 | 57    | ns/op |
 | Static SOQL query               | single | 1     | 6000  | ns/op |
 
-
-Also, worth mentioning that to obtain more precise results the measurement can be repeated several times to collect 
+Also, worth mentioning that to obtain more precise results the measurement can be repeated several times to collect
 the measurements data.
 Afterward, the statistical methods can be applied to the data to create statistical models.
 
-
 ## Disclaimer
 
-Please note, that the results of benchmarks depend on many factors and may vary and can be 
+Please note, that the results of benchmarks depend on many factors and may vary and can be
 considered as **relative** rather than **absolute**.
 
 ## Documentation

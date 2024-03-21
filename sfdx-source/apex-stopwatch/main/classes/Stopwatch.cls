@@ -19,12 +19,12 @@
  * the cumulative elapsed time value.</li>
  *     <li>The cumulative elapsed time in an existing Stopwatch instance can be cleared
  * using the {@link Stopwatch.reset()} method.</li>
- *     <li>The {@link Stopwatch.restart()} is the convenience method 
+ *     <li>The {@link Stopwatch.restart()} is the convenience method
  * for replacing {@link Stopwatch.reset()} and {@link Stopwatch.start()} with a single call.</li>
  * </ul>
  *
  * @author Oleh Berehovskyi
- * 
+ *
  * @group Utils
  */
 public abstract inherited sharing class Stopwatch {
@@ -161,8 +161,8 @@ public abstract inherited sharing class Stopwatch {
     // @end-group
     // </editor-fold>
 
-    // <editor-fold desc="Overriden Object Methods">
-    // @start-group Overriden Object Methods
+    // <editor-fold desc="Overridden Object Methods">
+    // @start-group Overridden Object Methods
     /**
      * @description Returns a string representation of the current object.
      *
@@ -173,5 +173,5 @@ public abstract inherited sharing class Stopwatch {
     }
     // @end-group
     // </editor-fold>
-    
+
 }

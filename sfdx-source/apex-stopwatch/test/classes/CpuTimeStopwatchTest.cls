@@ -7,7 +7,7 @@
 @IsTest(IsParallel = true)
 @SuppressWarnings('PMD')
 private class CpuTimeStopwatchTest {
-    
+
     /**
      * @see Stopwatch.getElapsedTime
      * @see CpuTimeStopwatch.startNew
